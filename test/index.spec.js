@@ -11,7 +11,7 @@ var client = function client ( server, namespace, options ) {
     options = namespace;
     namespace = null;
   }
-  return ioClient.connect( 'ws://0.0.0.0:' + PORT, options );
+  return ioClient.connect( 'ws://127.0.0.1:' + PORT, options );
 };
 
 vows.describe( 'socket.io-wildcard' ).addBatch( {

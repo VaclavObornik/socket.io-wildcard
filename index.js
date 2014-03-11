@@ -4,7 +4,7 @@ module.exports = function ( socketio ) {
     if ( this.namespaces[ packet.endpoint ] ) {
       this.namespaces[ packet.endpoint ].handlePacket( id, packet );
       // BEGIN: Wildcard patch
-      packet2 = JSON.parse( JSON.stringify( packet ) );
+      var packet2 = JSON.parse( JSON.stringify( packet ) );
       packet2.name = '*';
       packet2.args = { name: packet.name, args: packet2.args };
 
